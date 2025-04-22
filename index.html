@@ -1,87 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>e√ Life OS</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-            background-color: #0d0d0d;
-            color: #fff;
-            line-height: 1.6;
-            padding: 2rem;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 1rem;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 0.2rem;
-        }
-        h2 {
-            font-size: 2rem;
-            margin-top: 2.5rem;
-        }
-        p {
-            margin-bottom: 1.5rem;
-        }
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        li::before {
-            content: "\2022";
-            color: #00ffe1;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-        }
-        .footer {
-            margin-top: 4rem;
-            font-size: 0.9rem;
-            opacity: 0.6;
-        }
-        a {
-            color: #00ffe1;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>e√ Life OS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    img {
+      width: 180px;
+      height: auto;
+      display: block;
+      margin: 0 auto 2rem;
+      transform: translateZ(0); /* smoother */
+      will-change: transform;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.2rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li::before {
+      content: "\2022";
+      color: #00ffe1;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+
+    a {
+      color: #00ffe1;
+      text-decoration: none;
+      transition: text-shadow 0.3s ease;
+    }
+
+    a:hover {
+      text-shadow: 0 0 8px #00ffe1;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <img src="logo.png" alt="e√ Life OS logo" />
-        <p><strong><em>Stop planning. Start living. Mental clarity, on command.</em></strong></p>
-        <h2>What is e√?</h2>
-        <p>e√ is your life, structured.<br />An OS that replaces apps, calendars, and chaotic thoughts with one assistant prompt.</p>
-        <h2>Closed Beta – May 15, 2025</h2>
-        <p>Launching soon on Android and iOS. No sign-ups. No noise.</p>
-        <h2>Key Highlights</h2>
-        <ul>
-            <li><strong>AI Planning:</strong> From workouts to world tours, in a single-prompt.</li>
-            <li><strong>Assisted Prompting:</strong> Built-in guidance for smarter commands.</li>
-            <li><strong>Voice Input:</strong> When you don’t have time to type.</li>
-            <li><strong>Horizon:</strong> Events that bring people together long before they begin.</li>
-            <li><strong>Pulse:</strong> Real-time sync with others on the same journey.</li>
-            <li><strong>Orbits:</strong> Your network as a living system.</li>
-            <li><strong>Journey:</strong> Progress tracked, not just events listed.</li>
-            <li><strong>e√ Vault:</strong> Your life stays yours. Full control over local and cloud data—always. Straight from the app.</li>
-            <li><strong>Truly Free:</strong> No subscriptions. No in-app purchases.</li>
-        </ul>
+  <div class="container">
+    <img src="logo.png" alt="e√ Life OS logo" id="logo" />
 
-        <h2>Screenshots coming soon.</h2>
-        <p>(For now, just imagine it’s smooth, fast, and beautiful.)</p>
+    <p class="fade-in"><strong><em>Plan better. Live clearer. Mental clarity, on command.</em></strong></p>
 
-        <h2>Why e√?</h2>
-        <p>Still a calendar — just one that understands your life.<br /><br />Because nobody has time to fill out a calendar.
+    <h2 class="fade-in">What is e√?</h2>
+    <p class="fade-in">e√ is your life, structured.<br />An OS that replaces apps, calendars, and chaotic thoughts with one assistant prompt.</p>
 
-        <div class="footer">
-            <p>Built by Khieu AI Labs.<br />Bootstrapped. Private. Ruthless.<br />
-            <a href="#">evlifeos.com</a></p>
-        </div>
+    <h2 class="fade-in">Closed Beta – May 15, 2025</h2>
+    <p class="fade-in">Launching soon on Android and iOS. No sign-ups. No noise.</p>
+
+    <h2 class="fade-in">Key Highlights</h2>
+    <ul class="fade-in">
+      <li><strong>AI Planning:</strong> From workouts to world tours, in a single-prompt.</li>
+      <li><strong>Assisted Prompting:</strong> Built-in guidance for smarter commands.</li>
+      <li><strong>Voice Input:</strong> When you don’t have time to type.</li>
+      <li><strong>Horizon:</strong> Events that bring people together long before they begin.</li>
+      <li><strong>Pulse:</strong> Real-time sync with others on the same journey.</li>
+      <li><strong>Orbits:</strong> Your network as a living system.</li>
+      <li><strong>Journey:</strong> Progress tracked, not just events listed.</li>
+      <li><strong>e√ Vault:</strong> Your life stays yours. Full control over local and cloud data—always. Straight from the app.</li>
+      <li><strong>Truly Free:</strong> No subscriptions. No in-app purchases.</li>
+    </ul>
+
+    <h2 class="fade-in">Screenshots coming soon.</h2>
+    <p class="fade-in">(For now, just imagine it’s smooth, fast, and beautiful.)</p>
+
+    <h2 class="fade-in">Why e√?</h2>
+    <p class="fade-in">Still a calendar — just one that understands your life.<br /><br />Because nobody has time to fill out a calendar.</p>
+
+    <div class="footer fade-in">
+      <p>Built by Khieu AI Labs.<br />Bootstrapped. Private. Ruthless.<br />
+        <a href="#">evlifeos.com</a></p>
     </div>
+  </div>
+
+  <script>
+    // Fade in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appear = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(f => appear.observe(f));
+
+    // Parallax logo
+    window.addEventListener('scroll', () => {
+      const logo = document.getElementById('logo');
+      logo.style.transform = `translateY(${window.scrollY * 0.2}px)`;
+    });
+  </script>
 </body>
 </html>
